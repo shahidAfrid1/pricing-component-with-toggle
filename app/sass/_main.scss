@@ -1,0 +1,194 @@
+main {
+  width: 100%;
+  background-color: $VeryLightGrayishBlue;
+  padding: 62px 25px 50px;
+  text-align: center;
+  background-image: url("/images/bg-top.svg");
+  background-position: 50vw -10vw;
+  background-repeat: no-repeat;
+  @include sml{
+      background-image: url("/images/bg-top.svg"), url("/images/bg-bottom.svg");
+      background-position: right top, left bottom;
+
+  }
+  .bg-top {
+    position: absolute;
+    top: -4%;
+    left: 52%;
+    width: 48vw;
+    overflow: hidden;
+  }
+
+  .bg-bottom {
+    display: none;
+  }
+
+  > h1 {
+    color: $GrayishBlue;
+    margin-bottom: 37px;
+  }
+
+  .plan-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+    @include lgl {
+      margin-bottom: 60px;
+    }
+    > p {
+      font-size: 15px;
+      color: $LightGrayishBlue;
+    }
+    .toggle-btn {
+      position: relative;
+      width: 57px;
+      height: 34px;
+      background: linear-gradient(
+        135deg,
+        hsl(236, 72%, 79%),
+        hsl(237, 63%, 64%)
+      );
+      border-radius: 30px;
+      margin: 0 23px;
+      cursor: pointer;
+      @include lgl {
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      &.active {
+        .circle {
+          left: 5px;
+        }
+      }
+      .circle {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        width: 24px;
+        height: 24px;
+        background-color: white;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .hero {
+    width: 100%;
+    @include tbl {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    @include lgl {
+      flex-direction: row;
+    }
+    .card {
+      width: 100%;
+      background: white;
+      border-radius: 10px;
+      padding: 32px 25px 30px;
+      margin-bottom: 35px;
+      cursor: pointer;
+      @include tbl {
+        width: 430px;
+      }
+      @include lgl {
+        width: 352px;
+      }
+      &.active {
+        background: linear-gradient(
+          135deg,
+          hsl(236, 72%, 79%),
+          hsl(237, 63%, 64%)
+        );
+        @include lgl {
+          padding: 55px 25px;
+        }
+        > h2 {
+          color: $VeryLightGrayishBlue;
+        }
+
+        > h3 {
+          color: $VeryLightGrayishBlue;
+        }
+
+        > p {
+          color: $VeryLightGrayishBlue;
+          border-top: 1.5px solid hsl(236, 72%, 79%);
+          &.border-bottom {
+            border-bottom: 1.5px solid hsl(236, 72%, 79%);
+          }
+        }
+
+        > button {
+          background: $VeryLightGrayishBlue;
+          color: hsl(237, 63%, 64%);
+          @include lgl {
+            &:hover {
+              background: transparent;
+              border: 1px solid $VeryLightGrayishBlue;
+              color: $VeryLightGrayishBlue;
+            }
+          }
+        }
+      }
+      > h2 {
+        font-size: 19px;
+        color: $GrayishBlue;
+        margin-bottom: 20px;
+      }
+
+      > h3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        color: $DarkGrayishBlue;
+        margin-bottom: 20px;
+        > span {
+          font-size: 70px;
+          margin-left: 6px;
+        }
+      }
+
+      > p {
+        border-top: 1.5px solid hsl(240, 19%, 91%);
+        padding: 20px 0;
+        font-size: 15px;
+        color: $GrayishBlue;
+        &.border-bottom {
+          border-bottom: 1.5px solid hsl(240, 19%, 91%);
+          margin-bottom: 30px;
+        }
+      }
+
+      > button {
+        width: 100%;
+        height: 45px;
+        background: linear-gradient(
+          135deg,
+          hsl(236, 72%, 79%),
+          hsl(237, 63%, 64%)
+        );
+        border: none;
+        border-radius: 5px;
+        color: $VeryLightGrayishBlue;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        @include lgl {
+          &:hover {
+            background: transparent;
+            border: 1px solid $GrayishBlue;
+            color: hsl(237, 63%, 64%);
+          }
+        }
+      }
+    }
+  }
+}
